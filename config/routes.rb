@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: "planets#index"
 
   resources :bookings, :only [:new, :create, :show]
-  # get "/", to: "pages"
 
+  resources :planets, only:[:index, :show, :new]
   # GET "/planets/:planet_id/bookings/new", to: "booking#new"
   # POST '/planets/:planet_id/bookings', to: 'booking#create'
   get 'my_bookings', to:'bookings#my_bookings'
