@@ -1,1 +1,70 @@
-<h1> hello </h1>
+<section class="above-fold--wrapper">
+	<div class="form-above-fold--container">
+		<h1>A world of discovery</h1>
+		<button>Start your journey</button>
+	</div>
+</section>
+<section class="inline-list--wrapper">
+		<div class="inline-list--container">
+		<i class="material-symbols-outlined">rocket_launch</i>
+		<h2>Experience the Ultimate Adventure</h2>
+		<p>Our space travel agency offers customers the chance to venture beyond the confines of our planet and explore the wonders of the universe.</p>
+	</div>
+	<div class="inline-list--container">
+		<i class="material-symbols-outlined">travel_explore</i>
+		<h2>Discover the Cosmos</h2>
+		<p>Staffed by some of the world's most knowledgeable and experienced experts in space exploration.</p>
+	</div>
+	<div>
+		<div class="inline-list--container">
+		<i class="material-symbols-outlined icon">language</i>
+		<h2>Unleash Your Inner Explorer</h2>
+		<p>Offering a range of innovative solutions for every aspect of your space travel journey.</p>
+	</div>
+</section>
+
+<style>
+	.above-fold--wrapper {
+		padding: 60px;
+		height: 70vh;
+	}
+ .form-above-fold--container {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		height: 100%;
+		padding: 16px;
+		background: url('https://www.nasa.gov/sites/default/files/thumbnails/image/main_image_star-forming_region_carina_nircam_final-5mb.jpg');
+		object-fit: cover;
+		border-radius: 32px;
+	}
+	.hero-img {
+		position: absolute;
+		z-index: -1;
+		width: calc(100% - 132px);
+	}
+	button {
+		padding: 16px;
+		background-color: $orange;
+		white-space: nowrap;
+	}
+	.inline-list--wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		padding: 60px;
+		gap: 32px;
+		background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), #1F1F1F;
+		margin: 120px 0;
+	}
+
+	.material-symbols-outlined {
+		font-variation-settings:
+		'FILL' 0,
+		'wght' 400,
+		'GRAD' 0,
+		'opsz' 48;
+		padding: 16px;
+		background-color: #DB7F4F;
+		border-radius: 100vw;
+	}
+</style>

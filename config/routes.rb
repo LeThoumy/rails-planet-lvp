@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "planets#index"
 
-
   # get "/", to: "pages"
   # get "/planets", to: "planets#index"
   # get "/planets/:id", to:'planets#show'
