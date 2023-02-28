@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # get "/", to: "pages"
   # get "/planets", to: "planets#index"
   # get "/planets/:id", to:'planets#show'
-  resources :planets, only:[:index, :show, :new, :create]
+  resources :planets, only:[:index, :show, :new]
   # GET "/planets/:planet_id/bookings/new", to: "booking#new"
   # POST '/planets/:planet_id/bookings', to: 'booking#create'
   # GET 'my_bookings', to:'bookings#my_bookings'
