@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  root to: "planets#index"
 
   resources :bookings, :only [:new, :create, :show]
   # get "/", to: "pages"
-  get "/planets", to: "planets#index"
-  get "/planets/:id", to: 'planets#show'
+
   # GET "/planets/:planet_id/bookings/new", to: "booking#new"
   # POST '/planets/:planet_id/bookings', to: 'booking#create'
   get 'my_bookings', to:'bookings#my_bookings'
