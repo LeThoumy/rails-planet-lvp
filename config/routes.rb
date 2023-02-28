@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   # GET 'my_bookings', to:'bookings#my_bookings'
   # GET 'bookings/:id', to: "bookings#show"
   # GET "my_planets", to: "planets#my_planets"
-  # GET 'planets/new', to: 'planets#new'
-  # POST 'planets', to: 'planets#create'
+  get '/planets/new', to: 'planets#new', as: :new_planet
+  post '/planets', to: 'planets#create'
   # GET 'planets/:id/edit', to: 'planets#edit'
   # PATCH 'planets/:id', to: 'planets#update'
   # GET 'owner_bookings', to: "bookings#owner_bookings"
