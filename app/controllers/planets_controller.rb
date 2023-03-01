@@ -6,14 +6,14 @@ class PlanetsController < ApplicationController
     @planet = Planet.find(params[:id])
   end
   def new
-    @planet = Planet.new
+    @planets = Planet.new
   end
 
   def create
-    @planet = Planet.new(planet_params)
+    @planets = Planet.new(planet_params)
 
-    if @planet.save
-      redirect_to show(@planet)
+    if @planets.save
+      redirect_to show(@planets)
     else
       render :new, status: 422
     end

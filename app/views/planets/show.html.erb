@@ -1,19 +1,19 @@
 <main>
 	<h1><%= @planet.name %></h1>
-	<% @plant.each do|info|%>
     <div class="planet-details">
       <div class="comp1">
-        <span><%= info.name %> </span>
+        <span><%= @planet.name %></span>
         <span class="card-rating">★4.64</span>
         <span class="material-symbols-outlined">travel_explore</span>
-        <span><%= info.location %></span>
+        <span><%= @planet.location %></span>
+        <span><%= @planet.image %></span>
+        <span><%= @planet.price_for_one_night %></span>
+        <p><%= @planet.description %></p>
       </div>
       <div class="comp2">
         <button><i class="material-symbols-outlined">favorite_border</i></button>
       </div>
     </div>
-  <% end %>
-
 </main>
 
 <style>
