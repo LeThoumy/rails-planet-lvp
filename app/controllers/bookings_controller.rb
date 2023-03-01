@@ -5,6 +5,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @planet = Planet.find(params[:planet_id])
+    @booking.planet = @planet
+    @booking.user = current_user
+    #need to calculate price
 
     if @booking.save
       redirect_to booking_path(@booking)
@@ -18,9 +22,11 @@ class BookingsController < ApplicationController
   end
 
   def my_bookings
+    Booking.where(user: current_user)
   end
 
   def owner_bookings
+
   end
 
   private
