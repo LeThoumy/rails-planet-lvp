@@ -1,6 +1,30 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-Planet.create([{ name: "Mercury" }, { name: "Saturn" }, { name: "Jupiter"}, { name: "Earth"}, { name: "Mars"}])
+Booking.destroy_all
+Planet.destroy_all
+User.destroy_all
+
+owner = User.create!(email: 'a@.a.a', password: '123456')
+renter1 = User.create!(email: 'b@b.b', password: '123456')
+renter2 = User.create!(email: 'c@c.c', password: '123456')
+
+mercury = Planet.new(name: "Mercury")
+mercury.user = owner
+mercury.save!
+
+saturn = Planet.new(name: "Saturn")
+saturn.user = owner
+saturn.save!
+
+b = Booking.new
+b.planet = mercury
+b.user = renter1
+b.save!
+
+b = Booking.new
+b.planet = saturn
+b.user = renter1
+b.save!
+
+b = Booking.new
+b.planet = mercury
+b.user = renter2
+b.save!

@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
   end
 
   def owner_bookings
-
+    @owner_bookings = current_user.owner_bookings
   end
 
   private
