@@ -3,9 +3,13 @@ Rails.application.routes.draw do
   root to: "planets#index"
 
 
-  resources :planets, only:[:index, :show, :new, :create]
+  resources :planets, only: [:index, :show, :new ] do
 
-  resources :bookings, :only [:new, :create, :show]
+    resources :bookings, only: [:new, :create, :show]
+  end
+
+
+
 
   # GET "/planets/:planet_id/bookings/new", to: "booking#new"
   # POST '/planets/:planet_id/bookings', to: 'booking#create'
