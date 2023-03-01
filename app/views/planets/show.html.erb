@@ -1,1 +1,35 @@
-<h1>hello</h1>
+<main>
+	<h1><%= @planet.name %></h1>
+	<div class="planet-details">
+		<div class="comp1">
+			<span class="card-rating">★4.64</span>
+			<span class="material-symbols-outlined">travel_explore</span>
+			<span><%= @planet.location %></span>
+		</div>
+		<div class="comp2">
+			<button><i class="material-symbols-outlined">favorite_border</i></button>
+		</div>
+	</div>
+
+
+</main>
+
+<style>
+	main {
+		padding: 60px
+	}
+	h1 {
+		margin-bottom: 40px;
+	}
+	.comp-1 {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.card-rating {
+		font-size: 12px;
+		padding: 8px;
+		background: var(--surface-z3);
+		border-radius: 100vw;
+	}
+</style>
