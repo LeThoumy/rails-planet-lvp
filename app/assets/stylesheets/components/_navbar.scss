@@ -1,8 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $surface-z1;
 }
+a {
+  color: $text-color-primary !important;
 
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }

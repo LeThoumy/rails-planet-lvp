@@ -1,1 +1,11 @@
 // Specific CSS for your home-page
+h1 {
+	font-family: inter;
+	font-size: var(--fsz-3xl);
+}
+button {
+	background-color: $orange;
+	color: white;
+	border: none;
+	border-radius: 16px;
+}
