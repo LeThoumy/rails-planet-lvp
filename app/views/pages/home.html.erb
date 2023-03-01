@@ -1,2 +1,39 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<section class="above-fold--wrapper">
+	<div class="form-above-fold--container">
+		<h1>A world of discovery</h1>
+		<button>Start your journey</button>
+		<%= image_tag "hero-img.jpg", class: "hero-img" %>
+	</div>
+</section class="inline-list--wrapper">
+	<div class="inline-list--wrapper">
+		<i> </i>
+		<h2>Experience the Ultimate Adventure</h2>
+		<p>Our space travel agency offers customers the chance to venture beyond the confines of our planet and explore the wonders of the universe.</p>
+	</div>
+<section>
+
+</section>
+<style>
+	.above-fold--wrapper {
+		padding: 60px;
+		height: 70vh;
+	}
+ .form-above-fold--container {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		height: 100%;
+		padding: 16px;
+		background: url('hero-img.jpg')
+	}
+	.hero-img {
+		position: absolute;
+	}
+	button {
+		padding: 16px;
+		background-color: $orange;
+	}
+	i {
+
+	}
+</style>

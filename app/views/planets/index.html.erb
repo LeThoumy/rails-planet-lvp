@@ -1,1 +1,178 @@
-<h1> hello </h1>
+<section class="above-fold--wrapper">
+	<div class="form-above-fold--container">
+		<h1>A world of discovery</h1>
+		<button>Start your journey</button>
+	</div>
+</section>
+<section class="inline-list--wrapper">
+		<div class="inline-list--container">
+		<i class="material-symbols-outlined">rocket_launch</i>
+		<h2>Experience the Ultimate Adventure</h2>
+		<p>Our space travel agency offers customers the chance to venture beyond the confines of our planet and explore the wonders of the universe.</p>
+	</div>
+	<div class="inline-list--container">
+		<i class="material-symbols-outlined">travel_explore</i>
+		<h2>Discover the Cosmos</h2>
+		<p>Staffed by some of the world's most knowledgeable and experienced experts in space exploration.</p>
+	</div>
+	<div>
+		<div class="inline-list--container">
+		<i class="material-symbols-outlined icon">language</i>
+		<h2>Unleash Your Inner Explorer</h2>
+		<p>Offering a range of innovative solutions for every aspect of your space travel journey.</p>
+	</div>
+</section>
+<section class="complementary-text--wrapper">
+	<div class="complementary-text--container">
+		<h2>When are you traveling ?</h2>
+		<p>Offering a range of innovative solutions for every. we have everything you need to make your space adventure an unforgettable experience.</p>
+	</div>
+	<button>
+		Start your journey
+	</button>
+</section>
+<!-- stucture for the card  -->
+<div >
+
+
+</div>
+<section class="card-wrapper">
+	<% @planet.each do |card| %>
+    <div class="card-container">
+		<div class="card-head">
+			<h2 class="card-title"><%= card.name %></h2>
+		</div>
+		<div class="card-body">
+			<img src= <%= card.image %> alt="">
+		</div>
+		<div class="card-foot">
+			<span class="card-price"><=% card.price_for_one_night %></span>
+			<button class="card-button">See Details</button>
+		</div>
+   <% end %>
+	</div>
+</section>
+<style>
+	@font-face {
+  font-family: inter;
+  src: url("https://public-asse.s3.ca-central-1.amazonaws.com/fonts/Inter.var.woff2");
+  font-weight: 100 900;
+}
+:root {
+		font-family: inter;
+	--surface-z1: linear-gradient(135deg, RGBA(240, 240, 255, 0.05), RGBA(240, 240, 255, 0.05)), #1f1f1f;
+  --surface-z2: linear-gradient(135deg, RGBA(240, 240, 255, 0.1), RGBA(240, 240, 255, 0.1)), #1f1f1f;
+  --surface-z3: linear-gradient(135deg, RGBA(240, 240, 255, 0.16), RGBA(240, 240, 255, 0.16)), #1f1f1f;
+    --surface-z4: linear-gradient(135deg, RGBA(240, 240, 255, 0.24), RGBA(240, 240, 255, 0.24)), #1f1f1f;
+  --light-border: 1px solid RGBA(240, 240, 255, 0.04);
+  --txt-primary: RGBA(245, 245, 255, 1);
+  --txt-secondary: RGBA(245, 245, 255, 0.87);
+
+	}
+  /*--------------- Start here ---------------*/
+	.card-container {
+		width: clamp(260px, 40vw, 400px);
+		background: var(--surface-z2);
+    padding: 0 8px;
+    border-radius: 16px;
+    border: var(--light-border);
+	}
+	.card-head {
+		display: flex;
+		justify-content: space-between;
+    align-items: center;
+    margin: 24px 0;
+	}
+.card-body {
+  display: flex;
+  max-width: 100%;
+  gap: 8px;
+  border-radius: 8px 4px 4px 8px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+.card-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+}
+.card-title {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--txt-primary);
+  padding-left: 4px;
+}
+.card-rating {
+  font-size: 12px;
+  padding: 8px;
+  background: var(--surface-z3);
+  border-radius: 100vw;
+}
+.card-body img {
+  scroll-snap-align: center;
+  width: 80%;
+  border-radius: 4px;
+}
+.card-body img:last-of-type {
+  border-radius: 4px 8px 8px 4px;
+}
+
+.card-button {
+  all: unset;
+  font-size: 14px;
+  background: var(--surface-z4);
+  color: var(--txt-primary);
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: 550;
+}
+	.above-fold--wrapper {
+		padding: 60px;
+		height: 70vh;
+	}
+ .form-above-fold--container {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		height: 100%;
+		padding: 16px;
+		background: url('https://www.nasa.gov/sites/default/files/thumbnails/image/main_image_star-forming_region_carina_nircam_final-5mb.jpg');
+		object-fit: cover;
+		border-radius: 32px;
+	}
+	.hero-img {
+		position: absolute;
+		z-index: -1;
+		width: calc(100% - 132px);
+	}
+	button {
+		padding: 16px;
+		background-color: $orange;
+		white-space: nowrap;
+	}
+	.inline-list--wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		padding: 60px;
+		gap: 32px;
+		background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), #1F1F1F;
+		margin: 120px 0;
+	}
+	i {
+		margin-bottom: 16px;
+	}
+	.complementary-text--wrapper {
+		padding: 60px;
+ }
+	.complementary-text--container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 32px;
+	}
+	.complementary-text--container > h2 {
+		width: 50ch;
+	}
+</style>
