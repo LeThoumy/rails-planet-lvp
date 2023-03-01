@@ -1,7 +1,7 @@
 <section class="above-fold--wrapper">
 	<div class="form-above-fold--container">
 		<h1>A world of discovery</h1>
-		<button>Start your journey</button>
+    <a href="#planet-cards" class="card-btn">start your journey</a>
 	</div>
 </section>
 <section class="inline-list--wrapper">
@@ -27,16 +27,12 @@
 		<h2>When are you traveling ?</h2>
 		<p>Offering a range of innovative solutions for every. we have everything you need to make your space adventure an unforgettable experience.</p>
 	</div>
-	<button>
-		Start your journey
-	</button>
 </section>
 <!-- stucture for the card  -->
-<div >
-
+<div id="planet-cards" >
 
 </div>
-<section class="card-wrapper">
+<section  class="card-wrapper">
 	<% @planets.each do|card| %>
     <div class="card-container">
 			<div class="card-head">
@@ -79,4 +75,3 @@
 	}
 
 </style>
-
