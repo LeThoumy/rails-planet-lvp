@@ -6,7 +6,7 @@ owner = User.create!(email: 'a@.a.a', password: '123456')
 renter1 = User.create!(email: 'b@b.b', password: '123456')
 renter2 = User.create!(email: 'c@c.c', password: '123456')
 
-mercury = Planet.new(name: "Mercury", description: "The smallest planet in the solar system and nearest to the Sun, Mercury is only slightly larger than Earth's Moon. Mercury is the fastest planet, zipping around the Sun every 88 Earth days.", price_for_one_night: 249, location: "Milky Way", user_id: 1)
+mercury = Planet.new(name: "Mercury", description: "The smallest planet in the solar system and nearest to the Sun, Mercury is only slightly larger than Earth's Moon. Mercury is the fastest planet, zipping around the Sun every 88 Earth days.", price_for_one_night: 249, location: "Milky Way", user_id: 1,)
 mercury.user = owner
 mercury.save!
 

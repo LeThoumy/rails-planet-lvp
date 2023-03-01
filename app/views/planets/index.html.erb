@@ -40,17 +40,17 @@
 
 	<% @planets.each do|card| %>
     <div class="card-container">
-		<div class="card-head">
-			<h2 class="card-title"><%= card.name %></h2>
-		</div>
-		<div class="card-body">
-		</div>
-		<div class="card-foot">
-			<span class="card-price"><%= card.price_for_one_night %></span>
-			<button class="card-button">See Details</button>
-      <%= link_to "see Details ", show.html.erb >
-		</div>
-   <% end %>
+			<div class="card-head">
+				<h2 class="card-title"><%= card.name %></h2>
+			</div>
+			<div class="card-body">
+				<img src="<%= cl_image_path card.photo.key %>" alt="photo of <%= card.name %>">
+			</div>
+			<div class="card-foot">
+				<span class="card-price"><%= card.price_for_one_night %></span>
+				<%= link_to "see Details ", planet_path(card) %>
+			</div>
+   	<% end %>
 	</div>
 </section>
 
