@@ -7,11 +7,10 @@
 			<span><%= @planet.location %></span>
 		</div>
 		<div class="comp2">
-			<button><i class="material-symbols-outlined">favorite_border</i></button>
+			<button><span class="material-symbols-outlined">favorite_border</span></button>
 		</div>
 	</div>
-
-
+<p><%=@planet.description %></p>
 </main>
 
 <style>
@@ -21,10 +20,11 @@
 	h1 {
 		margin-bottom: 40px;
 	}
-	.comp-1 {
+	.planet-details {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		margin-bottom: 24px;
 	}
 	.card-rating {
 		font-size: 12px;
