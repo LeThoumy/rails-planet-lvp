@@ -31,22 +31,25 @@
 		Start your journey
 	</button>
 </section>
+<!-- stucture for the card  -->
+<div >
+
+
+</div>
 <section class="card-wrapper">
-	<div class="card-container">
+	<% @planet.each do |card| %>
+    <div class="card-container">
 		<div class="card-head">
-			<h2 class="card-title">Planet Name</h2>
-			<span class="card-rating">★4.64</span>
+			<h2 class="card-title"><%= card.name %></h2>
 		</div>
 		<div class="card-body">
-			<img src="https://source.unsplash.com/random/900x500?planet&1" alt="">
-			<img src="https://source.unsplash.com/random/900x500?planet&2" alt="">
-			<img src="https://source.unsplash.com/random/900x500?planet&3" alt="">
-			<img src="https://source.unsplash.com/random/900x500?planet&4" alt="">
+			<img src= <%= card.image %> alt="">
 		</div>
 		<div class="card-foot">
-			<span class="card-price">280$ / night</span>
+			<span class="card-price"><=% card.price_for_one_night %></span>
 			<button class="card-button">See Details</button>
 		</div>
+   <% end %>
 	</div>
 </section>
 <style>

@@ -9,20 +9,20 @@ class PlanetsController < ApplicationController
     @planet = Planet.new
   end
 
-  # def create
-  #   @planet = Planet.new(new_planet_name)
+  def create
+    @planet = Planet.new(planet_params)
 
-  #   if @planet.save
-  #     redirect_to show(@planet)
-  #   else
-  #     render :new, status: 422
-  #   end
+    if @planet.save
+      redirect_to show(@planet)
+    else
+      render :new, status: 422
+    end
 
-  #   private
+    private
 
-  #   def review_params
-  #     params.require(:planet).permit(:title, :location, :image)
-  #   end
+    def planet_params
+      params.require(:planet).permit(:name, :location, :image, :price_for_one_night, :description, :user_id )
+    end
 
-  # end
+  end
 end
