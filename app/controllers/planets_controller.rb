@@ -17,6 +17,9 @@ class PlanetsController < ApplicationController
     else
       render :new, status: 422
     end
+    def button
+       @planet = Planet.user_id redirect_to show(show.html.erb)
+    end
 
     private
 
