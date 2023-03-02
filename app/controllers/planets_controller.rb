@@ -2,27 +2,29 @@ class PlanetsController < ApplicationController
   def index
     @planets = Planet.all
   end
+
   def show
     @planet = Planet.find(params[:id])
   end
+
   def new
-    @planets = Planet.new
+    @planet = Planet.new
   end
 
   def create
-    @planets = Planet.new(planet_params)
+    @planet = Planet.new(planet_params)
+    @planet.user = current_user
 
-    if @planets.save
-      redirect_to show(@planets)
+    if @planet.save
+      redirect_to planet_path(@planet)
     else
       render :new, status: 422
     end
-    private
+  end
 
-    def planet_params
-      params.require(:planet).permit(:name, :location,  :price_for_one_night, :description, :user_id )
-    end
-    # dont forget to add the images
+  private
 
+  def planet_params
+    params.require(:planet).permit(:name, :location, :price_for_one_night, :description, photos: [])
   end
 end
