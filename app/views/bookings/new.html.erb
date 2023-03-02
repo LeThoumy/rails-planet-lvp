@@ -1,1 +1,9 @@
 <h1>hello this is the new bookings page </h1>
+
+<h1>what dates would you like to book</h1>
+
+<%= simple_form_for([@planet, @booking]) do |b| %>
+  <%= b.input :start_date %>
+  <%= b.input :end_date %>
+  <%= b.submit %>
+<% end %>

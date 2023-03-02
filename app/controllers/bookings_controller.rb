@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new
+    @planet = Planet.find(params[:planet_id])
   end
 
   def create
@@ -11,7 +12,7 @@ class BookingsController < ApplicationController
     #need to calculate price
 
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to planet_path(@planet)
     else
       render :new, status: :unprocessable_entity
     end
