@@ -12,8 +12,10 @@ renter2 = User.create!(email: 'c@c.c', password: '123456')
 mercury = Planet.new(name: "mercury", description: "The smallest planet in the solar system and nearest to the Sun, Mercury is only slightly larger than Earth's Moon. Mercury is the fastest planet, zipping around the Sun every 88 Earth days.", price_for_one_night: 249, location: "Milky Way", user_id: 1,);
 
 # Find url for images and store them inside a file variable
+
 image_of_mercury = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg/1200px-Mercury_in_color_-_Prockter07-edit1.jpg");
 mercury.photos.attach(io: image_of_mercury, filename: "mercury_01.jpg", content_type: "image/jpg")
+
 mercury.user = owner
 mercury.save!
 
