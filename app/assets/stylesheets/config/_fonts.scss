@@ -1,3 +1,8 @@
+@font-face {
+  font-family: inter;
+  src: url("https://public-asse.s3.ca-central-1.amazonaws.com/fonts/Inter.var.woff2");
+  font-weight: 100 900;
+}
 :root {
 	/* 9px to 12px */
 	--fsz-xs: clamp(0.5625rem, 0.4773rem + 0.2273vw, 0.75rem);
@@ -13,34 +18,4 @@
 	--fsz-2xl: clamp(3rem, 2.5455rem + 1.2121vw, 4rem);
 	/* 64px to 96px */
 	--fsz-3xl: clamp(4rem, 3.0909rem + 2.4242vw, 6rem);
-}
-
-@font-face {
-	font-family: 'inter';
-	src: url('../../fonts/Inter-Regular.ttf');
-	font-weight: 400;
-}
-
-@font-face {
-	font-family: 'inter';
-	src: url("../../fonts/Inter-Medium.ttf");
-	font-weight: 500;
-}
-
-@font-face {
-	font-family: 'inter display';
-	src: url("../../fonts/Inter-DisplayRegular.ttf");
-	font-weight: 400;
-}
-@font-face {
-	font-family: 'inter display';
-	src: url("../../fonts/Inter-DisplaySemiBold.ttf");
-	font-weight: 550;
-}
-
-body {
-	font-family: inter;
-}
-h1 {
-	font-family: inter;
 }
