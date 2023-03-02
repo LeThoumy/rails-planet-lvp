@@ -11,7 +11,6 @@ class PlanetsController < ApplicationController
 
   def create
     @planet = Planet.new(planet_params)
-
     if @planet.save
       redirect_to show(@planet)
     else
@@ -20,12 +19,11 @@ class PlanetsController < ApplicationController
     def button
        @planet = Planet.user_id redirect_to show(show.html.erb)
     end
+  end
 
-    private
+  private
 
-    def planet_params
-      params.require(:planet).permit(:name, :location, :image, :price_for_one_night, :description, :user_id )
-    end
-
+  def planet_params
+    params.require(:planet).permit(:name, :location, :image, :price_for_one_night, :description, :user_id )
   end
 end
