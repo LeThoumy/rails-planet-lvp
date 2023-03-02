@@ -18,8 +18,9 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find(params[:id])
-  end
+    @planet = Planet.find(params[:planet_id])
+    @booking = @planet.bookings.where(user: current_user )
+   end
 
   def my_bookings
     Booking.where(user: current_user)

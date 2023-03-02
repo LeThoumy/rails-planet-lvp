@@ -1,50 +1,54 @@
 <section class="above-fold--wrapper">
-  <div class="form-above-fold--container">
-    <h1>A world of discovery</h1>
-    <button>Start your journey</button>
-  </div>
+	<div class="form-above-fold--container">
+		<h1>A world of discovery</h1>
+    <a href="#planet-cards" class="card-btn">start your journey</a>
+	</div>
 </section>
 <section class="inline-list--wrapper">
-  <div class="inline-list--container">
-    <i class="material-symbols-outlined figure-icon">rocket_launch</i>
-    <h2>Experience the Ultimate Adventure</h2>
-    <p>Our space travel agency offers customers the chance to venture beyond the confines of our planet and explore the wonders of the universe.</p>
-  </div>
-  <div class="inline-list--container">
-    <i class="material-symbols-outlined figure-icon">travel_explore</i>
-    <h2>Discover the Cosmos</h2>
-    <p>Staffed by some of the world's most knowledgeable and experienced experts in space exploration.</p>
-  </div>
-  <div>
-    <div class="inline-list--container">
-      <i class="material-symbols-outlined figure-icon">language</i>
-      <h2>Unleash Your Inner Explorer</h2>
-      <p>Offering a range of innovative solutions for every aspect of your space travel journey.</p>
-    </div>
-  </section>
-  <section class="complementary-text--wrapper">
-    <div class="complementary-text--container">
-      <h2>When are you traveling ?</h2>
-      <p>Offering a range of innovative solutions for every. we have everything you need to make your space adventure an unforgettable experience.</p>
-    </div>
-    <button>
-      Start your journey
-    </button>
-  </section>
-  <section class="card-wrapper">
-    <%= cl_image_tag("allstate-logo_xoewb5", width: 400, height: 300) %>
-    <% @planets.each do|card| %>
-      <div class="card-container">
-        <div class="card-head">
-          <h2 class="card-title"><%= card.name %></h2>
-          <span class="card-rating">★4.64</span>
-        </div>
-        <div class="card-body">
-        </div>
-        <div class="card-foot">
-          <span class="card-price"><%= card.price_for_one_night %>$ / night</span>
-          <%= link_to "See Details ", planet_path(card), class: "card-btn" %>
-        </div>
-      </div>
-    <% end %>
-  </section>
+		<div class="inline-list--container">
+		<i class="material-symbols-outlined">rocket_launch</i>
+		<h2>Experience the Ultimate Adventure</h2>
+		<p>Our space travel agency offers customers the chance to venture beyond the confines of our planet and explore the wonders of the universe.</p>
+	</div>
+	<div class="inline-list--container">
+		<i class="material-symbols-outlined">travel_explore</i>
+		<h2>Discover the Cosmos</h2>
+		<p>Staffed by some of the world's most knowledgeable and experienced experts in space exploration.</p>
+	</div>
+	<div>
+		<div class="inline-list--container">
+		<i class="material-symbols-outlined icon">language</i>
+		<h2>Unleash Your Inner Explorer</h2>
+		<p>Offering a range of innovative solutions for every aspect of your space travel journey.</p>
+	</div>
+</section>
+<section class="complementary-text--wrapper">
+	<div class="complementary-text--container">
+		<h2>When are you traveling ?</h2>
+		<p>Offering a range of innovative solutions for every. we have everything you need to make your space adventure an unforgettable experience.</p>
+	</div>
+</section>
+<!-- stucture for the card  -->
+<div id="planet-cards" >
+
+</div>
+<section  class="card-wrapper">
+	<% @planets.each do|card| %>
+    <div class="card-container">
+			<div class="card-head">
+				<h2 class="card-title"><%= card.name %></h2>
+				<span class="card-rating">★4.64</span>
+			</div>
+			<div class="card-body">
+				<img src="https://source.unsplash.com/random/900x500?planet&1" alt="">
+   			<img src="https://source.unsplash.com/random/900x500?planet&2" alt="">
+    		<img src="https://source.unsplash.com/random/900x500?planet&3" alt="">
+    		<img src="https://source.unsplash.com/random/900x500?planet&4" alt="">
+			</div>
+			<div class="card-foot">
+				<span class="card-price"><%= card.price_for_one_night %>$ / night</span>
+				<%= link_to "See Details ", planet_path(card), class: "card-btn" %>
+			</div>
+	</div>
+   	<% end %>
+</section>
