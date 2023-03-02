@@ -16,7 +16,7 @@ class PlanetsController < ApplicationController
     @planet.user = current_user
 
     if @planet.save
-      redirect_to show(@planet)
+      redirect_to planet_path(@planet)
     else
       render :new, status: 422
     end
