@@ -1,10 +1,19 @@
+<section>
 <h1>My travels</h1>
+<main class="form-wrapper">
 <ul>
   <% @bookings.each do |booking| %>
-    <li><%= booking.planet.name %></li>
-    <li> <%= booking.start_date %></li>
-    <li> <%= booking.end_date %></li>
+    <li>Planet: <%= booking.planet.name %></li>
+
+    <li>From:       <%= booking.start_date %></li>
+
+    <li>To: <%= booking.end_date %></li>
+
     <li><%= booking.total_price %></li>
-    <li>  <%= booking.status %></li>
+
+    <li>Status: <%= booking.status %></li>
+
     <% end %>
 </ul>
+ </main>
+ </section>
