@@ -7,7 +7,7 @@
           <span class="card-rating">★4.64</span>
           <span class="material-symbols-outlined">travel_explore</span>
           <span><%= @planet.location %></span>
-          <span><%= @planet.price_for_one_night %>$</span>
+          <span><%= @planet.price_for_one_night %></span>
         </div>
         <%= link_to "Book Now", new_planet_booking_path(@planet), class: "card-btn" %>
       </div>
