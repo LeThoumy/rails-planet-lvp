@@ -1,12 +1,28 @@
 <h1>My booking</h1>
-<ul>
-  <% @bookings.each do |booking| %>
-    <li><%= booking.planet.name %></li>
-    <li> <%= booking.start_date %></li>
-    <li> <%= booking.end_date %></li>
-    <li><%= booking.total_price %></li>
-    <li>  <%= booking.status %></li>
-     <%= link_to "Approve", accepted_path(booking),data: {turbo_method: :patch}, class: "card-btn" %>
-      <%= link_to "Decline", declined_path(booking),data: {turbo_method: :patch}, class: "card-btn" %>
-  <% end %>
-</ul>
+<section class='booking-main-wrapper'>
+  <main class="booking-container">
+      <% @bookings.each do |booking| %>
+      <div>
+        <li><%= booking.planet.name %></li>
+        <li> <%= booking.start_date %></li>
+        <li> <%= booking.end_date %></li>
+        <li><%= booking.total_price %></li>
+        <li>  <%= booking.status %></li>
+      </div>
+      <div class='boutons'>
+            <%= link_to "Approve", accepted_path(booking),data: {turbo_method: :patch}, class: "card-btn" %>
+              <%= link_to "Decline", declined_path(booking),data: {turbo_method: :patch}, class: "card-btn" %>
+      </div>
+    <% end %>
+      </main>
+</section>
+<style>
+.booking-main-wrapper {
+  display: block;
+}
+.booking-container {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+</style>
