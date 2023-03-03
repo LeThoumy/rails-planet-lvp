@@ -31,6 +31,12 @@
     @owner_bookings = current_user.owner_bookings
   end
 
+  def accepted
+    @booking = Booking.find(params[:id])
+    @booking.status = "approved"
+    @booking.save
+  end
+
   private
 
   def booking_params

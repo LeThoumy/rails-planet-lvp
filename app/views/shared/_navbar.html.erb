@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+a<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to root_path , class: "navbar-brand" do %>
       <%= image_tag "astro_logo.svg" %> <h3>PLATENERIA</h3>
@@ -15,6 +15,11 @@
           <li class="nav-item active">
             <%= link_to  "My bookings", my_bookings_path, class: "nav-link" %>
           </li>
+
+          <li class="nav-item active">
+            <%= link_to  "My planets", my_planets_path, class: "nav-link" %>
+          </li>
+
           <li class="nav-item active">
             <%= link_to "add your planet", new_planet_path, class: "nav-link" %>
           </li>

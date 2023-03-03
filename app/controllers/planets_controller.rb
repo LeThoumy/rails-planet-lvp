@@ -21,6 +21,9 @@ class PlanetsController < ApplicationController
       render :new, status: 422
     end
   end
+  def my_planets
+    @planets = current_user.planets
+  end
 
   private
 
