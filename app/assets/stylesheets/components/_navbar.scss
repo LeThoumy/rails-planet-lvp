@@ -8,18 +8,43 @@ a {
 
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.logo {
+  width: auto;
+  height: 60px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
 }
 
 .navbar-nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.dropdown-menu {
+  background: var(--surface-z2);
+}
+
+.dropdown-item:hover {
+  background: var(--surface-z4);
+}
+
+.nav-link.main {
+  margin: 0 8px;
+  border-radius: 16px;
+  font-weight: 500;
+  padding: 12px 16px;
+}
+
+.nav-link.main:hover {
+  transition: all 0.3s ease-in-out;
+  background: var(--surface-z4);
+  font-weight: 550;
+}
+.nav-link.main.active {
+  outline: 1px solid #dedede;
 }
 
 .nav-icon {

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :planets do
     resources :bookings, only: [:new, :create, :show]
   end
+  get "my_planets", to: "planets#my_planets"
+  patch '/bookings/:id/accepted', to: "bookings#accepted", as: :accepted
+  patch '/bookings/:id/declined', to: "bookings#declined", as: :declined
 
   # GET "/planets/:planet_id/bookings/new", to: "booking#new"
   # POST '/planets/:planet_id/bookings', to: 'booking#create'
