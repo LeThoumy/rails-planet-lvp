@@ -24,11 +24,12 @@
   end
 
   def my_bookings
-    @bookings = Booking.where(user: current_user)
+    my_bookings = current_user.planets
+    @bookings = Booking.where(planet_id: my_bookings)
   end
 
-  def owner_bookings
-    @owner_bookings = current_user.owner_bookings
+  def my_travels
+    @bookings = current_user.bookings
   end
 
   def accepted
@@ -37,6 +38,11 @@
     @booking.save
   end
 
+  def declined
+    @booking = Booking.find(params[:id])
+    @booking.status = "rejected "
+    @booking.save
+  end
   private
 
   def booking_params

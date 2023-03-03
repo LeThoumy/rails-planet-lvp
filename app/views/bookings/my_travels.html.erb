@@ -1,4 +1,4 @@
-<h1>My booking</h1>
+<h1>My travels</h1>
 <ul>
   <% @bookings.each do |booking| %>
     <li><%= booking.planet.name %></li>
@@ -6,7 +6,5 @@
     <li> <%= booking.end_date %></li>
     <li><%= booking.total_price %></li>
     <li>  <%= booking.status %></li>
-     <%= link_to "Approve", accepted_path(booking),data: {turbo_method: :patch}, class: "card-btn" %>
-      <%= link_to "Decline", declined_path(booking),data: {turbo_method: :patch}, class: "card-btn" %>
-  <% end %>
+    <% end %>
 </ul>
