@@ -6,7 +6,7 @@
     <li> <%= booking.end_date %></li>
     <li><%= booking.total_price %></li>
     <li>  <%= booking.status %></li>
-     <%= link_to "Approved", accepted_path(booking),data: {turbo_method: :patch}, class: "card-btn" %>
-      <%# <%= link_to "See Details ", planet_path(card), class: "card-btn" %> %>
+     <%= link_to "Approve", accepted_path(booking),data: {turbo_method: :patch}, class: "card-btn" %>
+      <%= link_to "Decline", declined_path(booking),data: {turbo_method: :patch}, class: "card-btn" %>
   <% end %>
 </ul>

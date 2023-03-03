@@ -37,9 +37,10 @@
     @booking.status = "approved"
     @booking.save
   end
-  def rejected
+
+  def declined
     @booking = Booking.find(params[:id])
-    @booking.status = "rejected"
+    @booking.status = "rejected "
     @booking.save
   end
   private
