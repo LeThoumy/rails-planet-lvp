@@ -9,6 +9,7 @@ section {
 	margin: 0 auto;
 	padding: 24px;
 	background: var(--surface-z1);
+	border: 1px solid var(--surface-z4);
 	border-radius: 40px;
 }
 
@@ -30,4 +31,8 @@ h1 {
 	border: 1px solid #DB7F4F;
 	outline: 2px solid hsla(21, 66%, 58%, 0.12);
 	box-shadow: none;
+}
+
+.date-form--wrapper {
+	display: flex;
 }
