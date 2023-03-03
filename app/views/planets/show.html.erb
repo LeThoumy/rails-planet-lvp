@@ -12,7 +12,7 @@
         <%= link_to "Book Now", new_planet_booking_path(@planet), class: "card-btn" %>
       </div>
       </div>
-        <%= link_to "Edit", new_planet_booking_path(@planet), class: "card-btn" %>
+        <%= link_to "Edit", planets_path(@planet), class: "card-btn" %>
       </div>
       <section class="gallery--wrapper">
         <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
