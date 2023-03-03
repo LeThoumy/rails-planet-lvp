@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   # GET "/planets/:planet_id/bookings/new", to: "booking#new"
   # POST '/planets/:planet_id/bookings', to: 'booking#create'
-  get 'my_bookings', to:'bookings#my_bookings'
+  get 'my_bookings', to: 'bookings#my_bookings'
   # GET 'bookings/:id', to: "bookings#show"
   # GET "my_planets", to: "planets#my_planets"
   # GET 'planets/new', to: 'planets#new'
