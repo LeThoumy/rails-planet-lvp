@@ -1,37 +1,92 @@
 <main>
-	<h1><%= @planet.name %></h1>
-    <div class="planet-details">
-      <div class="comp1">
-        <span><%= @planet.name %></span>
-        <span class="card-rating">★4.64</span>
-        <span class="material-symbols-outlined">travel_explore</span>
-        <span><%= @planet.location %></span>
-        <span><%= @planet.price_for_one_night %></span>
-        <p><%= @planet.description %></p>
-        <span><%= @planet.user_id %></span>
-        <div class="">
-          <%= link_to "Book Now", new_planet_booking_path(@planet), class: "card-btn" %>
+  <h1 class="planet-details--heading"><%= @planet.name %></h1>
+  <div class="planet-details">
+    <div class="comp1">
+      <div class="planet-details--container">
+        <div class="planet-details--txt">
+          <span class="card-rating">★4.64</span>
+          <span class="material-symbols-outlined">travel_explore</span>
+          <span><%= @planet.location %></span>
+          <span><%= @planet.price_for_one_night %>$</span>
         </div>
+        <%= link_to "Book Now", new_planet_booking_path(@planet), class: "card-btn" %>
       </div>
+      <section class="gallery--wrapper">
+        <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
+        <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
+        <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
+        <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
+        <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
+      </section>
+      <p class="planet--description"><%= @planet.description %></p>
+      <form action="">
+        <input type="date" name="" id="">
+        <input type="date" name="" id="">
+      </form>
     </div>
+  </div>
 </main>
-
 <style>
-	main {
-		padding: 60px
-	}
-	h1 {
-		margin-bottom: 40px;
-	}
-	.comp-1 {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	.card-rating {
-		font-size: 12px;
-		padding: 8px;
-		background: var(--surface-z3);
-		border-radius: 100vw;
-	}
+  main {
+  	padding: 60px
+  }
+  h1 {
+  	margin-bottom: 40px;
+  }
+  .planet-details--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .planet-details--heading {
+  	font-size: var(--fsz-3xl);
+  	margin-top: 2em;
+  }
+  .planet-details--txt {
+    display: flex;
+    align-items: center;
+    gap: 24px
+  }
+  .gallery--wrapper {
+    display: grid;
+    max-width: 100%;
+    height: 65vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 8px;
+    grid-row-gap: 8px;
+    margin-bottom: 80px;
+    margin-top: 24px;
+    border-radius: 16px;
+    overflow: clip;
+  }
+  .planet-subtitle--description {
+    font-size: var(--fsz-sm);
+    font-weight: 600;
+  }
+  .gallery--wrapper > img  {
+    width:  100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+   .gallery--wrapper > img:first-of-type {
+    grid-area: 1 / 1 / 3 / 4;
+  }
+  .planet--description {
+    font-size: ;
+  }
+
+  .comp-1 {
+  	display: flex;
+  	align-items: center;
+  	justify-content: space-between;
+  }
+  .card-rating {
+  	font-size: 12px;
+  	padding: 8px;
+  	background: var(--surface-z3);
+  	border-radius: 100vw;
+  }
 </style>
