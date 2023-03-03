@@ -1,4 +1,4 @@
-<%= form_with model: @planet do |f| %>
+<%= simple_form_for(@planet) do |f| %>
  <%= f.input :name %>
       <%= f.input :description, as: :text %>
       <%= f.input :location, as: :string %>
