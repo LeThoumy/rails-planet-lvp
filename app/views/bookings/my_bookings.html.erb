@@ -1,1 +1,12 @@
-<h1></h1>
+<h1>My booking</h1>
+<ul>
+  <% @bookings.each do |booking| %>
+    <li><%= booking.planet.name %></li>
+    <li> <%= booking.start_date %></li>
+    <li> <%= booking.end_date %></li>
+    <li><%= booking.total_price %></li>
+    <li>  <%= booking.status %></li>
+     <%= link_to "Approved", accepted_path(booking),data: {turbo_method: :patch}, class: "card-btn" %>
+      <%# <%= link_to "See Details ", planet_path(card), class: "card-btn" %> %>
+  <% end %>
+</ul>

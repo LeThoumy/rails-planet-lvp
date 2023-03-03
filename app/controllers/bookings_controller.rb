@@ -1,4 +1,4 @@
-class BookingsController < ApplicationController
+  class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @planet = Planet.find(params[:planet_id])
@@ -21,14 +21,20 @@ class BookingsController < ApplicationController
   def show
     @planet = Planet.find(params[:planet_id])
     @booking = @planet.bookings.where(user: current_user )
-   end
+  end
 
   def my_bookings
-    Booking.where(user: current_user)
+    @bookings = Booking.where(user: current_user)
   end
 
   def owner_bookings
     @owner_bookings = current_user.owner_bookings
+  end
+
+  def accepted
+    @booking = Booking.find(params[:id])
+    @booking.status = "approved"
+    @booking.save
   end
 
   private

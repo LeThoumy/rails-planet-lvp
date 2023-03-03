@@ -1,0 +1,22 @@
+<h1>My planets</h1>
+<section  class="card-wrapper" id="planet-listing">
+    <% @planets.each do|card| %>
+      <div class="card-container">
+        <div class="card-head">
+          <h2 class="card-title"><%= card.name %></h2>
+          <span class="card-rating">★4.64</span>
+        </div>
+        <div class="card-body">
+          <% card.photos.each do |photo| %>
+            <%= cl_image_tag photo.key %>
+            <%= cl_image_tag photo.key %>
+            <%= cl_image_tag photo.key %>
+          <% end %>
+        </div>
+        <div class="card-foot">
+          <span class="card-price"><%= card.price_for_one_night %>$ / night</span>
+          <%= link_to "See Details ", planet_path(card), class: "card-btn" %>
+        </div>
+      </div>
+    <% end %>
+  </section>
