@@ -9,7 +9,6 @@
 	--light-border: 1px solid RGBA(240, 240, 255, 0.04);
 	--txt-primary: RGBA(245, 245, 255, 1);
 	--txt-secondary: RGBA(245, 245, 255, 0.87);
-
 }
 
 /*--------------- Start here ---------------*/
@@ -106,10 +105,14 @@
 	width: calc(100% - 132px);
 }
 
-button {
+button,
+.btn-primary {
 	padding: 16px;
 	background-color: $orange;
 	white-space: nowrap;
+	border-radius: 16px;
+	text-decoration: none;
+	font-weight: 500;
 }
 
 .inline-list--wrapper {
