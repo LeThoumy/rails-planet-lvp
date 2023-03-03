@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "planets#index"
 
 
-  resources :planets, only: [:index, :show, :new, :create ] do
+  resources :planets do
     resources :bookings, only: [:new, :create, :show]
   end
 
