@@ -10,6 +10,8 @@
           <span><%= @planet.price_for_one_night %></span>
         </div>
         <%= link_to "Book Now", new_planet_booking_path(@planet), class: "card-btn" %>
+         <%= link_to "Edit", edit_planet_path(@planet), class: "card-btn" %>
+         <%= link_to "Delete",planet_path(@planet),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "card-btn" %>
       </div>
       <section class="gallery--wrapper">
         <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
