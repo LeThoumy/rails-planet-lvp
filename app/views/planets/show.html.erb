@@ -1,5 +1,11 @@
 <main>
-  <h1 class="planet-details--heading"><%= @planet.name %></h1>
+  <div>
+    <div class="split-btn">
+      <%= link_to "Edit", edit_planet_path(@planet), class: " card-btn split-btn left" %>
+      <%= link_to "Delete",planet_path(@planet),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: " card-btn split-btn right" %>
+    </div>
+    <span class="planet-details--heading"><%= @planet.name %></span>
+  </div>
   <div class="planet-details">
     <div class="comp1">
       <div class="planet-details--container">
@@ -7,21 +13,19 @@
           <span class="card-rating">★4.64</span>
           <span class="material-symbols-outlined">travel_explore</span>
           <span><%= @planet.location %></span>
-          <span><%= @planet.price_for_one_night %></span>
+          <span><%= @planet.price_for_one_night %>$</span>
         </div>
         <%= link_to "Book Now", new_planet_booking_path(@planet), class: "card-btn" %>
-        <%= link_to "Edit", edit_planet_path(@planet), class: "card-btn" %>
-        <%= link_to "Delete",planet_path(@planet),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "card-btn" %>
       </div>
-      <section class="gallery--wrapper">
-        <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
-        <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
-        <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
-        <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
-        <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
-      </section>
-      <p class="planet--description"><%= @planet.description %></p>
     </div>
+    <section class="gallery--wrapper">
+      <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
+      <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
+      <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
+      <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
+      <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
+    </section>
+    <p class="planet--description"><%= @planet.description %></p>
   </div>
 </main>
 <style>
@@ -86,5 +90,14 @@
   	padding: 8px;
   	background: var(--surface-z3);
   	border-radius: 100vw;
+  }
+  .split-btn {
+    height: 60px;
+  }
+  .split-btn.left {
+    border-radius: 8px 1px 1px 8px;
+  }
+  .split-btn.right {
+    border-radius: 1px 8px 8px 1px;
   }
 </style>
