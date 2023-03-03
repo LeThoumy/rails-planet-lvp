@@ -14,6 +14,9 @@
       </div>
         <%= link_to "Edit", edit_planet_path(@planet), class: "card-btn" %>
       </div>
+      </div>
+        <%= link_to "Delete",planet_path(@planet),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "card-btn" %>
+      </div>
       <section class="gallery--wrapper">
         <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
         <%= cl_image_tag @planet.photos.first.key, class: "planet-details--hero-img" %>
