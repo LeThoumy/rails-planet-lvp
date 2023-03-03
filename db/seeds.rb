@@ -15,7 +15,6 @@ mercury = Planet.new(name: "mercury", description: "The smallest planet in the s
 
 image_of_mercury = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Mercury_in_color_-_Prockter07-edit1.jpg/1200px-Mercury_in_color_-_Prockter07-edit1.jpg");
 mercury.photos.attach(io: image_of_mercury, filename: "mercury_01.jpg", content_type: "image/jpg")
-
 mercury.user = owner
 mercury.save!
 
@@ -26,7 +25,7 @@ venus.user = owner
 venus.save!
 
 saturn = Planet.new(name: "Saturn", description: "Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth.", price_for_one_night: 299, location: "Milky Way", user_id: 3)
-image_of_saturn = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Saturn_during_Equinox.jpg/1200px-Saturn_during_Equinox.jpg");
+image_of_saturn = URI.open("https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2018/03/saturn_s_greatest_storm/17397601-1-eng-GB/Saturn_s_greatest_storm.jpg");
 saturn.photos.attach(io: image_of_saturn, filename: "saturn_01.jpg", content_type: "image/jpg")
 saturn.user = owner
 saturn.save!
