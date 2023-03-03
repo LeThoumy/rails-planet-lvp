@@ -22,6 +22,10 @@ class PlanetsController < ApplicationController
     end
   end
 
+  def edit
+    @planet = Planet.find(params[:id])
+  end
+
   private
 
   def planet_params
