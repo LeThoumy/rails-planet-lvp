@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create, :show]
   end
   get "my_planets", to: "planets#my_planets"
+  get "my_travels", to: "bookings#my_travels", as: :my_travels
   patch '/bookings/:id/accepted', to: "bookings#accepted", as: :accepted
   patch '/bookings/:id/declined', to: "bookings#declined", as: :declined
 
